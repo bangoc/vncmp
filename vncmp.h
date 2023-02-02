@@ -154,8 +154,9 @@
 #define VN_UP_YX 0X1EF8
 #define VN_LO_YX 0X1EF9
 
+extern wchar_t g_vn_map[];
+
 extern const wchar_t k_vn_characters[];
-extern const double k_vn_map[];
 extern const int k_vn_map_max_index;
 
 int vnwchcmp(wchar_t ch1, wchar_t ch2);
