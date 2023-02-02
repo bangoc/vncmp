@@ -154,12 +154,11 @@
 #define VN_UP_YX 0X1EF8
 #define VN_LO_YX 0X1EF9
 
-extern wchar_t g_vn_map[];
 
+#define VN_MAXCHAR 0x1EFA
+extern const wchar_t k_vn_map[];
 extern const wchar_t k_vn_characters[];
-extern const int k_vn_map_max_index;
 
-void lazy_init_vn_map(void);
 int vnwchcmp(wchar_t ch1, wchar_t ch2);
 int vnwscmp(const wchar_t *s1, const wchar_t *s2);
 int vnu8scmp(const char *s1, const char *s2);
