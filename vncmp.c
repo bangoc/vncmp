@@ -435,6 +435,13 @@ static void init_vn_map(void) {
   // check_permutation();
 }
 
+void lazy_init_vn_map(void) {
+  if (g_vn_map_lazy_init) {
+    init_vn_map();
+    g_vn_map_lazy_init = 0;
+  }
+}
+
 int vnwchcmp(wchar_t ch1, wchar_t ch2) {
   static char lazy_init = 1;
   if (g_vn_map_lazy_init) {
