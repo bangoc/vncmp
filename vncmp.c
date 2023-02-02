@@ -451,25 +451,14 @@ int vnwchcmp(wchar_t ch1, wchar_t ch2) {
   wchar_t v1, v2;
   VNCHMAP(v1, ch1);
   VNCHMAP(v2, ch2);
-  if (v1 < v2) {
-    return -1;
-  } else if (v1 > v2) {
-    return 1;
-  }
-  return 0;
+  return v1 - v2;
 }
 
 int vnwscmp(const wchar_t *s1, const wchar_t *s2) {
   int chcmp;
   for (;;) {
     if (*s1 == 0 || *s2 == 0) {
-      if (*s1 < *s2) {
-        return -1;
-      } else if (*s1 > *s2) {
-        return 1;
-      } else {
-        break;
-      }
+      return *s1 - *s2;
     }
     chcmp = vnwchcmp(*s1, *s2);
     if (chcmp) {
