@@ -147,142 +147,142 @@ static void check_permutation(void) {
 }
 
 static void init_vn_map(void) {
-  wchar_t bias = 0;
+  wchar_t shift = 0;
   wchar_t i = 0;
   for (; i <= VN_UP_A; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
 
   /* Giãn chữ hoa */
-  bias += (VN_UP_A_ALL - 1);
+  shift += (VN_UP_A_ALL - 1);
   for (; i <= VN_UP_D; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_UP_D_ALL - 1);
+  shift += (VN_UP_D_ALL - 1);
   for (; i <= VN_UP_E; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_UP_E_ALL - 1);
+  shift += (VN_UP_E_ALL - 1);
   for (; i <= VN_UP_I; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_UP_I_ALL - 1);
+  shift += (VN_UP_I_ALL - 1);
   for (; i <= VN_UP_O; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_UP_O_ALL - 1);
+  shift += (VN_UP_O_ALL - 1);
   for (; i <= VN_UP_U; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_UP_U_ALL - 1);
+  shift += (VN_UP_U_ALL - 1);
   for (; i <= VN_UP_Y; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_UP_Y_ALL - 1);
+  shift += (VN_UP_Y_ALL - 1);
   for (; i <= VN_LO_A; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
 
   /* Giãn chữ thường */
-  bias += (VN_LO_A_ALL - 1);
+  shift += (VN_LO_A_ALL - 1);
   for (; i <= VN_LO_D; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_LO_D_ALL - 1);
+  shift += (VN_LO_D_ALL - 1);
   for (; i <= VN_LO_E; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_LO_E_ALL - 1);
+  shift += (VN_LO_E_ALL - 1);
   for (; i <= VN_LO_I; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_LO_I_ALL - 1);
+  shift += (VN_LO_I_ALL - 1);
   for (; i <= VN_LO_O; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_LO_O_ALL - 1);
+  shift += (VN_LO_O_ALL - 1);
   for (; i <= VN_LO_U; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_LO_U_ALL - 1);
+  shift += (VN_LO_U_ALL - 1);
   for (; i <= VN_LO_Y; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias += (VN_LO_Y_ALL - 1);
+  shift += (VN_LO_Y_ALL - 1);
   for (; i < VN_UP_AF; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 4;
+  shift -= 4;
   for (i = VN_UP_AX + 1; i < VN_UP_EF; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 3;
+  shift -= 3;
   for (i = VN_UP_EE + 1; i < VN_UP_IF; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 2;
+  shift -= 2;
   for (i = VN_UP_IS + 1; i < VN_UP_OF; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 4;
+  shift -= 4;
   for (i = VN_UP_OX + 1; i < VN_UP_UF; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 2;
+  shift -= 2;
   for (i = VN_UP_US + 1; i < VN_UP_YS; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 1;
+  shift -= 1;
   for (i = VN_UP_YS + 1; i < VN_LO_AF; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 4;
+  shift -= 4;
   for (i = VN_LO_AX + 1; i < VN_LO_EF; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 3;
+  shift -= 3;
   for (i = VN_LO_EE + 1; i < VN_LO_IF; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 2;
+  shift -= 2;
   for (i = VN_LO_IS + 1; i < VN_LO_OF; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 4;
+  shift -= 4;
   for (i = VN_LO_OX + 1; i < VN_LO_UF; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 2;
+  shift -= 2;
   for (i = VN_LO_US + 1; i < VN_LO_YS; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 1;
+  shift -= 1;
   for (i = VN_LO_YS + 1; i < VN_UP_AW; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 2;
+  shift -= 2;
   for (i = VN_LO_AW + 1; i < VN_UP_DD; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 2;
+  shift -= 2;
   for (i = VN_LO_DD + 1; i < VN_UP_IX; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 2;
+  shift -= 2;
   for (i = VN_LO_IX + 1; i < VN_UP_UX; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 2;
+  shift -= 2;
   for (i = VN_LO_UX + 1; i < VN_UP_OW; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 2;
+  shift -= 2;
   for (i = VN_LO_OW + 1; i < VN_UP_UW; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
-  bias -= 2;
+  shift -= 2;
   for (i = VN_LO_UW + 1; i < VN_UP_AJ; ++i) {
-    g_vn_map[i] = i + bias;
+    g_vn_map[i] = i + shift;
   }
 
   /* Ánh xạ chữ cái tiếng Việt */
