@@ -455,28 +455,34 @@ int vnwchcmp(wchar_t ch1, wchar_t ch2) {
 }
 
 int vnwscmp(const wchar_t *s1, const wchar_t *s2) {
-  int chcmp;
+  int chcmp = 0;
   for (;;) {
     if (*s1 == 0 || *s2 == 0) {
       return *s1 - *s2;
     }
     chcmp = vnwchcmp(*s1, *s2);
     if (chcmp) {
-      return chcmp;
+      break;
     }
     ++s1;
     ++s2;
   }
-  return 0;
+  return chcmp;
 }
 
 int vnu8scmp(const char *s1, const char *s2) {
-  wchar_t *ws1 = calloc(strlen(s1) + 1, sizeof(wchar_t));
-  wchar_t *ws2 = calloc(strlen(s2) + 1, sizeof(wchar_t));
-  u82ws(ws1, s1);
-  u82ws(ws2, s2);
-  int res = vnwscmp(ws1, ws2);
-  free(ws1);
-  free(ws2);
-  return res;
+  int chcmp = 0;
+  wchar_t ch1, ch2;
+  for (;;) {
+    s1 += u82wc(&ch1, s1);
+    s2 += u82wc(&ch2, s2);
+    if (ch1 == 0 || ch2 == 0) {
+      return ch1 - ch2;
+    }
+    chcmp = vnwchcmp(ch1, ch2);
+    if (chcmp) {
+      break;
+    }
+  }
+  return chcmp;
 }
