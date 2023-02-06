@@ -14,7 +14,7 @@ int seqlen(unsigned char first) {
   return cc? cc: 1;
 }
 
-size_t u82wc(wchar_t *dest, const char *s) {
+size_t u82wch(wchar_t *dest, const char *s) {
   wchar_t wch = 0;
   const unsigned char *p = s;
   int nb = seqlen(*p);
@@ -33,7 +33,7 @@ size_t u82ws(wchar_t *dest, const char *s) {
   wchar_t tmp;
   int idx = 0;
   while (*p) {
-    int nb = u82wc(&tmp, p);
+    int nb = u82wch(&tmp, p);
     dest[idx] = tmp;
     ++idx;
     p += nb;
@@ -42,7 +42,7 @@ size_t u82ws(wchar_t *dest, const char *s) {
   return idx;
 }
 
-size_t wc2u8(char *dest, const wchar_t ch) {
+size_t wch2u8(char *dest, const wchar_t ch) {
   if (ch < 0x80) {
     dest[0] = (char)ch;
     dest[1] = '\0';
@@ -76,7 +76,7 @@ size_t ws2u8(char *dest, const wchar_t *s) {
   size_t idx = 0;
   for (int i = 0; i < wcslen(s); ++i) {
     char buff[10];
-    size_t n = wc2u8(buff, s[i]);
+    size_t n = wch2u8(buff, s[i]);
     memcpy(dest + idx, buff, n);
     idx += n;
   }

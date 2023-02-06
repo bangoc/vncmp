@@ -13,7 +13,7 @@ int main() {
     ss[i] = malloc(100);
   }
   int ret = 0;
-  while ((ret = scanf("%[^\n]%*c", ss[n])) != EOF && ret != 0) {
+  while (scanf("%[^\n]%*c", ss[n]) == 1) {
     ++n;
   }
   if (n < 1) {

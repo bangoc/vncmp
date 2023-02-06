@@ -19,7 +19,7 @@ int main() {
   printf("%s\n", u8str);
   char *s = u8"ạ";
   wchar_t wch;
-  printf("%zu ", u82wc(&wch, s));
+  printf("%zu ", u82wch(&wch, s));
   printf("%d\n", wch);
   char *u8s = u8"Tháng 3 mùa hoa gạo.";
   wchar_t ws[100];
