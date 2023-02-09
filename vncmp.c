@@ -31,9 +31,9 @@ int vnwscmp(const wchar_t *s1, const wchar_t *s2) {
 
 int vnu8scmp(const char *s1, const char *s2) {
   wchar_t ch1, ch2;
-  while ((s1 += u82wch(&ch1, s1),
-          s2 += u82wch(&ch2, s2),
-          ch1 == ch2)) {
+  while (s1 += u82wch(&ch1, s1),
+         s2 += u82wch(&ch2, s2),
+         ch1 == ch2) {
     if (ch1 == 0) {
       return 0;
     }
