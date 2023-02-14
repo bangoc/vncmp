@@ -8,6 +8,8 @@
 #include "vnchar.h"
 
 extern const wchar_t k_vn_map[];
+extern const size_t k_vn_map_len;
+
 extern const wchar_t k_vn_characters[];
 
 int vnwchcmp(wchar_t ch1, wchar_t ch2);
