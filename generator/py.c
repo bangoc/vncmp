@@ -33,5 +33,7 @@ int main() {
   printf("      return 1\n");
   printf("    elif vnchmap(s1[i]) < vnchmap(s2[i]):\n");
   printf("      return -1\n");
+  printf("  if len(s1) < len(s2):\n");
+  printf("    return -1;\n");
   printf("  return 0\n");
 }
