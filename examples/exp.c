@@ -2,8 +2,8 @@
 #include <string.h>
 #include <uchar.h>
 
-#include "vncmp.h"
-#include "utf8.h"
+#include "c-cpp/vncmp.h"
+#include "c-cpp/utf8.h"
 
 int main() {
   printf("%zu\n", sizeof(wchar_t));

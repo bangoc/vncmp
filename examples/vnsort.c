@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "vncmp.h"
+#include "c-cpp/vncmp.h"
 
 int main() {
   int n = 0;

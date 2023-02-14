@@ -1,0 +1,5 @@
+add_executable(vnsort vnsort.c)
+add_executable(exp exp.c)
+foreach (p exp vnsort)
+  target_link_libraries(${p} vncmp)
+endforeach()
