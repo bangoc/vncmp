@@ -1,3 +1,5 @@
+# (C) Nguyễn Bá Ngọc 2023
+
 import array
 
 vn_map = array.array('i',
@@ -507,6 +509,7 @@ def wchcmp(c1, c2):
   if c1 == c2:
     return 0;
   return -1 if vnchmap(c1) < vnchmap(c2) else 1
+
 def wscmp(s1, s2):
   for i in range(len(s1)):
     if i >= len(s2):

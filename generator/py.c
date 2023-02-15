@@ -27,7 +27,7 @@ int main() {
   printf("def wchcmp(c1, c2):\n");
   printf("  if c1 == c2:\n");
   printf("    return 0;\n");
-  printf("  return -1 if vnchmap(c1) < vnchmap(c2) else 1\n");
+  printf("  return -1 if vnchmap(c1) < vnchmap(c2) else 1\n\n");
 
   printf("def wscmp(s1, s2):\n");
   printf("  for i in range(len(s1)):\n");
