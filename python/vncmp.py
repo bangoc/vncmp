@@ -500,6 +500,8 @@ vn_map = array.array('i',
     0X007F, 0X00E2, 0X0082, 0X00E5, 0X008D, 0X00F0, 0X008B, 0X00EE, 0X0092, 0X00F5, 0X008F, 0X00F2, 0X0091, 0X00F4, 0X0090, 0X00F3, 
     0X0093, 0X00F6, 0X0098, 0X00FB, 0X009C, 0X00FF, 0X009A, 0X00FD, 0X0099, 0X00FC])
 
+vn_map_len = len(vn_map)
+
 def vnchmap(c):
   if ord(c) >= len(vn_map):
     return ord(c)
@@ -511,15 +513,16 @@ def wchcmp(c1, c2):
   return -1 if vnchmap(c1) < vnchmap(c2) else 1
 
 def wscmp(s1, s2):
-  for i in range(len(s1)):
-    if i >= len(s2):
+  len1 = len(s1)
+  len2 = len(s2)
+  for i in range(len1):
+    if i >= len2:
       return 1
     if s1[i] == s2[i]:
       continue
     if vnchmap(s1[i]) > vnchmap(s2[i]):
       return 1
-    elif vnchmap(s1[i]) < vnchmap(s2[i]):
-      return -1
-  if len(s1) < len(s2):
+    return -1
+  if len1 < len2:
     return -1;
   return 0

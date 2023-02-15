@@ -1,4 +1,5 @@
 add_executable(py py.c)
-foreach (p py)
+add_executable(go go.c)
+foreach (p py go)
   target_link_libraries(${p} vncmp)
 endforeach()
