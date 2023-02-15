@@ -5,6 +5,7 @@
 #include "c-cpp/vncmp.h"
 
 int main() {
+  printf("# (C) Nguyễn Bá Ngọc 2023\n\n");
   printf("import array\n\n");
   printf("vn_map = array.array('i',\n  [");
   for (int i = 0; i < k_vn_map_len; ++i) {
@@ -22,6 +23,11 @@ int main() {
   printf("  if ord(c) >= len(vn_map):\n");
   printf("    return ord(c)\n");
   printf("  return vn_map[ord(c)]\n\n");
+
+  printf("def wchcmp(c1, c2):\n");
+  printf("  if c1 == c2:\n");
+  printf("    return 0;\n");
+  printf("  return -1 if vnchmap(c1) < vnchmap(c2) else 1\n");
 
   printf("def wscmp(s1, s2):\n");
   printf("  for i in range(len(s1)):\n");
