@@ -520,7 +520,7 @@ func Wchcmp(c1 rune, c2 rune) int {
   return 1;
 }
 
-func Wscmp(s1 string, s2 string) int {
+func U8scmp(s1 string, s2 string) int {
   i, j, w1, w2 := 0, 0, 0, 0
   len1, len2 := len(s1),len(s2)
   var c1, c2 rune = 0, 0
